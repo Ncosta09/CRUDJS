@@ -28,7 +28,6 @@ class ProductsManager {
             console.log(error);
 
             throw error;
-
         }
     }
     async read(id){
@@ -42,7 +41,6 @@ class ProductsManager {
             console.log(error);
 
             throw error;
-
         }
     }
     async create(productData){
@@ -96,7 +94,7 @@ class ProductsManager {
             const stringData = JSON.stringify(filteredProduct, null, 1);
             await fs.promises.writeFile(this.path, stringData);
 
-            return `Product with id ${id} deleted`;
+            return `PRODUCT WITH ID: ${id} DELETED`;
 
         } catch (error) {
             console.log(error);

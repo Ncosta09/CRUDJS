@@ -48,6 +48,7 @@ async function createProduct(req, res, next) {
     try {
         const data = req.body;
         const responseManager = await productsManager.create(data);
+
         return res.status(201).json({ message: "PRODUCT CREATED: ", response: responseManager })
 
     } catch (error) {
@@ -86,7 +87,7 @@ async function deleteProduct(req, res, next) {
 
             throw error;
         }else{
-            return res.status(200).json({ message: "PRODUCT DELETED: ", response: responseManager })
+            return res.status(200).json({ message: "PRODUCT DELETED: ", response: responseManager });
         }
 
     } catch (error) {
