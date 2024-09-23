@@ -1,6 +1,5 @@
 function validateProductData(req, res, next){
     try {
-        //const data = req.body;
         const { title, photo, category, price, stock } = req.body;
 
         if(!title || !photo || !category || !price || !stock){
@@ -39,11 +38,46 @@ function validateProductUpdateData(req, res, next){
         }
         
     } catch (error) {
-        
+        throw error;
+    }
+}
+
+function validateUserData(req, res, next){
+    try {
+        const { email, password, role, photo } = req.body;
+
+        if(!email || !password || !role || !photo){
+            const error = new Error("ALL PROPERTIES ARE REQUIRED!");
+            error.statusCode = 400;
+
+            throw error;
+        }else{
+            return next();
+        }
+
+    } catch (error) {
+        throw error;
+    }
+}
+
+function validateUserUpdateData(req, res, next) {
+    try {
+        const { email, password, role, photo } = req.body;
+
+        if(!email && !password && !role && !photo){
+            return res.status(400).json({ message: "AT LEAST ONE PROPERTY MUST BE PROVIDED TO UPDATE!" })
+        }else{
+            return next();
+        }
+
+    } catch (error) {
+        throw error;
     }
 }
 
 export {
     validateProductData, 
-    validateProductUpdateData
+    validateProductUpdateData,
+    validateUserData,
+    validateUserUpdateData
 };
