@@ -1,34 +1,322 @@
 [
  {
-  "title": "pomelo",
-  "photo": "photo",
-  "category": "bebida",
-  "price": 254,
-  "stock": 59,
-  "id": "9ef5b12a0984e72c93ef8751"
+  "title": "Smartphone Samsung Galaxy S21",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 799.99,
+  "stock": 50,
+  "id": "5e0852e0a83188536b4dff59"
  },
  {
-  "title": "coca cola",
-  "photo": "photo",
-  "category": "bebida",
-  "price": 852,
+  "title": "Laptop Dell Inspiron 15",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 599.99,
+  "stock": 30,
+  "id": "4d04677e1bfe2b6f2226068d"
+ },
+ {
+  "title": "Auriculares Sony WH-1000XM4",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 299.99,
+  "stock": 80,
+  "id": "73412f203eaefdfbd2f80232"
+ },
+ {
+  "title": "Televisor LG 55' OLED",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 999.99,
+  "stock": 20,
+  "id": "48f86452aab69440fa323ba8"
+ },
+ {
+  "title": "Tablet iPad Air",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 499.99,
+  "stock": 60,
+  "id": "1a0f49c243e5b873a0955c55"
+ },
+ {
+  "title": "Camiseta Nike Dri-Fit",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 29.99,
+  "stock": 100,
+  "id": "78c4759d16bc8dcba07460e4"
+ },
+ {
+  "title": "Zapatillas Adidas Ultraboost",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 159.99,
+  "stock": 40,
+  "id": "aea6b4c9c9c6dad603435c4e"
+ },
+ {
+  "title": "Chaqueta North Face Apex",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 120,
+  "stock": 25,
+  "id": "336ec6c0c9912c899af85cf1"
+ },
+ {
+  "title": "Pantalones Levi's 501",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 49.99,
+  "stock": 90,
+  "id": "355ad2c1e38d565d1939a41f"
+ },
+ {
+  "title": "Vestido Zara Summer",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 35.99,
+  "stock": 75,
+  "id": "3c34943ac0ddadebe7c1a60e"
+ },
+ {
+  "title": "Cafetera Nespresso Vertuo",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 129.99,
+  "stock": 50,
+  "id": "515a13c2d5234aa3d58261c6"
+ },
+ {
+  "title": "Aspiradora Dyson V11",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 599.99,
+  "stock": 15,
+  "id": "c8d601d0333a54202c867158"
+ },
+ {
+  "title": "Microondas LG NeoChef",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 199.99,
+  "stock": 35,
+  "id": "0eaee2746174006c5c15c5e7"
+ },
+ {
+  "title": "Plancha a vapor Philips",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 49.99,
+  "stock": 70,
+  "id": "0a343ab93eab8f7ea93be906"
+ },
+ {
+  "title": "Colchón King Koil Resort",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 799.99,
+  "stock": 10,
+  "id": "f7def76132e17cbd4522bdf7"
+ },
+ {
+  "title": "Bicicleta de montaña Trek",
+  "photo": "default-photo-path.png",
+  "category": "Deportes",
+  "price": 799.99,
+  "stock": 20,
+  "id": "d2061ed6fa1d231496df5764"
+ },
+ {
+  "title": "Pelota de fútbol Adidas Finale",
+  "photo": "default-photo-path.png",
+  "category": "Deportes",
+  "price": 39.99,
+  "stock": 100,
+  "id": "39271f99848dbe4d8da64762"
+ },
+ {
+  "title": "Raqueta de tenis Wilson Pro Staff",
+  "photo": "default-photo-path.png",
+  "category": "Deportes",
+  "price": 219.99,
+  "stock": 30,
+  "id": "1d5a39e66ed4ab19b54b6e5c"
+ },
+ {
+  "title": "Guantes de boxeo Everlast",
+  "photo": "default-photo-path.png",
+  "category": "Deportes",
+  "price": 49.99,
+  "stock": 40,
+  "id": "e78af3da5f5079a27ede2589"
+ },
+ {
+  "title": "Cinta de correr NordicTrack",
+  "photo": "default-photo-path.png",
+  "category": "Deportes",
+  "price": 999.99,
+  "stock": 10,
+  "id": "8629aa4cefae3e6c8ae2ca5f"
+ },
+ {
+  "title": "Lego Star Wars Millennium Falcon",
+  "photo": "default-photo-path.png",
+  "category": "Juguetes",
+  "price": 159.99,
+  "stock": 25,
+  "id": "3dcd2fd998f660bfebc111c5"
+ },
+ {
+  "title": "Muñeca Barbie Dreamhouse",
+  "photo": "default-photo-path.png",
+  "category": "Juguetes",
+  "price": 89.99,
+  "stock": 50,
+  "id": "498c73cca8d70bf82ac8682d"
+ },
+ {
+  "title": "Hot Wheels Track Builder",
+  "photo": "default-photo-path.png",
+  "category": "Juguetes",
+  "price": 29.99,
+  "stock": 80,
+  "id": "b1923d9000d87dfcda30329d"
+ },
+ {
+  "title": "Puzzle Ravensburger 1000 piezas",
+  "photo": "default-photo-path.png",
+  "category": "Juguetes",
+  "price": 19.99,
+  "stock": 100,
+  "id": "840d39e825dcdae02ca47b16"
+ },
+ {
+  "title": "Play-Doh Super Color Pack",
+  "photo": "default-photo-path.png",
+  "category": "Juguetes",
+  "price": 24.99,
+  "stock": 60,
+  "id": "09680676c6b59e3815fdb28a"
+ },
+ {
+  "title": "Auriculares inalámbricos JBL",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 49.99,
+  "stock": 90,
+  "id": "f3a585e601c9e8cfe2b233cb"
+ },
+ {
+  "title": "Monitor HP 27 pulgadas",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 189.99,
+  "stock": 40,
+  "id": "99939cb6fcd5defea002ab1a"
+ },
+ {
+  "title": "Cámara GoPro Hero 9",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 399.99,
+  "stock": 25,
+  "id": "fda12f414f4d9b35967421f7"
+ },
+ {
+  "title": "Smartwatch Apple Watch Series 6",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 399.99,
+  "stock": 35,
+  "id": "1d58168876b4cf576634f4d2"
+ },
+ {
+  "title": "Impresora HP DeskJet 2720",
+  "photo": "default-photo-path.png",
+  "category": "Electrónica",
+  "price": 59.99,
+  "stock": 70,
+  "id": "316554cccf0bba349d18026d"
+ },
+ {
+  "title": "Sudadera Puma Essential",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 39.99,
+  "stock": 120,
+  "id": "ccfe2a4cb8f1f1ded24bd048"
+ },
+ {
+  "title": "Zapatos Vans Old Skool",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 69.99,
+  "stock": 50,
+  "id": "0601e4b1e11895e28968db80"
+ },
+ {
+  "title": "Chaqueta Columbia Powder Lite",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 99.99,
+  "stock": 30,
+  "id": "e457b61dfeed685071ad836e"
+ },
+ {
+  "title": "Gorra New Era 59Fifty",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 34.99,
+  "stock": 60,
+  "id": "4f142d9cf6e97415d16c3b1c"
+ },
+ {
+  "title": "Sombrero de playa Roxy",
+  "photo": "default-photo-path.png",
+  "category": "Ropa",
+  "price": 24.99,
+  "stock": 45,
+  "id": "18181080a532b2a85d364bb7"
+ },
+ {
+  "title": "Batidora Oster Pro",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 79.99,
+  "stock": 85,
+  "id": "12e92eeb17ecf5806a6487b7"
+ },
+ {
+  "title": "Freidora de aire Philips",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 159.99,
+  "stock": 40,
+  "id": "4694c8b712826a8920390663"
+ },
+ {
+  "title": "Ventilador Dyson Cool",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 349.99,
+  "stock": 20,
+  "id": "20b65989ebf16f0e138d0eac"
+ },
+ {
+  "title": "Juego de ollas T-fal",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 99.99,
+  "stock": 100,
+  "id": "e8642e3b1aabe17e7c822acd"
+ },
+ {
+  "title": "Lampara de pie Ikea",
+  "photo": "default-photo-path.png",
+  "category": "Hogar",
+  "price": 51.89,
   "stock": 99,
-  "id": "b2228e915cf5b24eac245344"
- },
- {
-  "title": "sprite",
-  "photo": "photo",
-  "category": "bebida",
-  "price": 232,
-  "stock": 22,
-  "id": "e5c062e5982687411d824f9a"
- },
- {
-  "title": "naranja",
-  "photo": "photo",
-  "category": "bebida",
-  "price": 111,
-  "stock": 72,
-  "id": "5d0fb361e0426e4210fe78e6"
+  "id": "a828519b5b7b10eaa444185b"
  }
 ]

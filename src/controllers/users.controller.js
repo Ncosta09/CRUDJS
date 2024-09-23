@@ -46,14 +46,37 @@ async function getUser(req, res, next) {
 
 async function createUser(req, res, next) {
     try {
-        const data = req.body;
+        const { 
+            email, 
+            password, 
+            photo = 'default-photo-path.png', 
+            role = 0
+        } = req.body;
+        
+        const data = {
+            email,
+            password,
+            photo,
+            role
+        };
+    
         const responseManager = await usersManager.create(data);
-
+    
         return res.status(201).json({ message: "USER CREATED: ", response: responseManager })
-
+        
     } catch (error) {
         return next(error);
     }
+
+    // try {
+    //     const data = req.body;
+    //     const responseManager = await usersManager.create(data);
+
+    //     return res.status(201).json({ message: "USER CREATED: ", response: responseManager })
+
+    // } catch (error) {
+    //     return next(error);
+    // }
 }
 
 async function updateUser(req, res, next) {

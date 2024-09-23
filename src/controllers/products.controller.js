@@ -45,15 +45,41 @@ async function getProduct(req, res, next) {
 }
 
 async function createProduct(req, res, next) {
+
     try {
-        const data = req.body;
+        const {
+            title,
+            photo = 'default-photo-path.png',
+            category = 'default',
+            price = 1,
+            stock = 1
+        } = req.body;
+        
+        const data = {
+            title,
+            photo,
+            category,
+            price,
+            stock
+        };
+    
         const responseManager = await productsManager.create(data);
-
-        return res.status(201).json({ message: "PRODUCT CREATED: ", response: responseManager })
-
+    
+        return res.status(201).json({ message: "PRODUCT CREATED", response: responseManager });
+        
     } catch (error) {
         return next(error);
     }
+
+    // try {
+    //     const data = req.body;
+    //     const responseManager = await productsManager.create(data);
+
+    //     return res.status(201).json({ message: "PRODUCT CREATED: ", response: responseManager })
+
+    // } catch (error) {
+    //     return next(error);
+    // }
 }
 
 async function updateProduct(req, res, next) {
