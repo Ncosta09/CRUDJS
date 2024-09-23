@@ -1,0 +1,34 @@
+[
+ {
+  "title": "pomelo",
+  "photo": "photo",
+  "category": "bebida",
+  "price": 254,
+  "stock": 25,
+  "id": "9ef5b12a0984e72c93ef8751"
+ },
+ {
+  "title": "coca cola",
+  "photo": "photo",
+  "category": "bebida",
+  "price": 852,
+  "stock": 99,
+  "id": "b2228e915cf5b24eac245344"
+ },
+ {
+  "title": "sprite",
+  "photo": "photo",
+  "category": "bebida",
+  "price": 232,
+  "stock": 22,
+  "id": "e5c062e5982687411d824f9a"
+ },
+ {
+  "title": "naranja",
+  "photo": "photo",
+  "category": "bebida",
+  "price": 111,
+  "stock": 72,
+  "id": "5d0fb361e0426e4210fe78e6"
+ }
+]
