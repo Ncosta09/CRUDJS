@@ -1,0 +1,30 @@
+[
+ {
+  "email": "pepe@mail.com",
+  "password": "123456",
+  "photo": "default-photo-path.png",
+  "role": 0,
+  "id": "2f65a60931e27474f01e0d70"
+ },
+ {
+  "email": "juan@mail.com",
+  "password": "123456789",
+  "photo": "default-photo-path.png",
+  "role": 0,
+  "id": "23f2df31b77c37d1a53aa569"
+ },
+ {
+  "email": "julian@mail.com",
+  "password": "pepeloco123",
+  "photo": "default-photo-path.png",
+  "role": 0,
+  "id": "e18160dca907e3c93331f687"
+ },
+ {
+  "email": "micaela@mail.com",
+  "password": "Man123",
+  "photo": "default-photo-path.png",
+  "role": 0,
+  "id": "4c31eee297bd222c53f35bc6"
+ }
+]
