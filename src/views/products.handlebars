@@ -1,0 +1,14 @@
+<h2>Products</h2>
+
+<section>
+    {{#each data}}
+    <a href="/products/{{this.id}}">
+        <article>
+            <p>{{this.title}}</p>
+            <p>{{this.category}}</p>
+            <p>{{this.price}}</p>
+            <p>{{this.stock}}</p>
+        </article>
+    </a>
+    {{/each}}
+</section>
