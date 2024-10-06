@@ -26,5 +26,13 @@
   "photo": "default-photo-path.png",
   "role": 0,
   "id": "4c31eee297bd222c53f35bc6"
+ },
+ {},
+ {
+  "email": "ncosta@mail.com",
+  "password": "nico",
+  "photo": "https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small_2x/user-profile-icon-free-vector.jpg",
+  "role": 0,
+  "id": "e52a477140de846cfac7701e"
  }
 ]

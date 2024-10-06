@@ -46,7 +46,7 @@ class UsersManager {
     async create(userData){
         try {
             userData.id = crypto.randomBytes(12).toString("hex");
-
+            
             const allUsers = await this.readAll();
             allUsers.push(userData);
 
@@ -102,6 +102,30 @@ class UsersManager {
             throw error;
         }
     }
+
+    // USER AUTHENTICATION
+    async authenticate(email, password) {
+        try {
+            const allUsers = await this.readAll();
+            const user = allUsers.find(user => user.email === email);
+    
+            if (!user) {
+                return null;
+            }
+
+            console.log("se logueo:" +  user);
+
+            if (user.password === password) {
+                return user;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+    
 }
 
 const usersManager = new UsersManager("./src/data/fs/users.json");

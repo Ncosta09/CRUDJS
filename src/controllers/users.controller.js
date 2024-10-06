@@ -118,10 +118,59 @@ async function deleteUser(req, res, next) {
     }
 }
 
+async function authenticateUser(req, res, next) {
+    const { email, password } = req.body;
+    console.log(req.body);
+
+    try {
+        const user = await usersManager.authenticate(email, password);
+
+        if(user){
+            return res.redirect("/products");
+        } else {
+            return res.render("login", { error: "Invalid email or password" });
+        }
+    } catch (error) {
+        return next(error);
+    }
+}
+
+async function creteViewUser(req, res, next) {
+    try {
+        const { 
+            email, 
+            password, 
+            photo, 
+            role = 0
+        } = req.body;
+        
+        const data = {
+            email,
+            password,
+            photo,
+            role
+        };
+
+        console.log(data);
+        
+    
+        await usersManager.create(data);
+    
+        return res.redirect("/users/login")
+        
+    } catch (error) {
+        return next(error);
+    }
+}
+
 export{
     getAllUsers,
     getUser,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+
+    // VIEWS
+    authenticateUser,
+    creteViewUser
 }

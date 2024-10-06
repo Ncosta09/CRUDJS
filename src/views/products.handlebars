@@ -1,13 +1,11 @@
-<h2>Products</h2>
-
-<section>
+<section class="products-grid">
     {{#each data}}
-    <a href="/products/{{this.id}}">
+    <a href="/products/{{this.id}}" class="product-card">
         <article>
-            <p>{{this.title}}</p>
-            <p>{{this.category}}</p>
-            <p>{{this.price}}</p>
-            <p>{{this.stock}}</p>
+            <h3 class="product-title">{{this.title}}</h3>
+            <p class="product-price">${{this.price}}</p>
+            <p class="product-category">{{this.category}}</p>
+            <p class="product-stock">Stock: {{this.stock}}</p>
         </article>
     </a>
     {{/each}}
