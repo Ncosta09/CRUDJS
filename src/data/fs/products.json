@@ -1,18 +1,10 @@
 [
  {
-  "title": "Smartphone Samsung Galaxy S21",
-  "photo": "https://images.samsung.com/is/image/samsung/p6pim/ar/galaxy-s21/gallery/ar-galaxy-s21-5g-g996-sm-g996bzvlaro-thumb-368339092",
-  "category": "Electrónica",
-  "price": 799.99,
-  "stock": 50,
-  "id": "5e0852e0a83188536b4dff59"
- },
- {
   "title": "Laptop Dell Inspiron 15",
-  "photo": "default-photo-path.png",
+  "photo": "https://m.media-amazon.com/images/I/71nP6lTogjL._AC_SL1500_.jpg",
   "category": "Electrónica",
-  "price": 599.99,
-  "stock": 30,
+  "price": "599.99",
+  "stock": "30",
   "id": "4d04677e1bfe2b6f2226068d"
  },
  {
@@ -62,14 +54,6 @@
   "price": 120,
   "stock": 25,
   "id": "336ec6c0c9912c899af85cf1"
- },
- {
-  "title": "Pantalones Levi's 501",
-  "photo": "default-photo-path.png",
-  "category": "Ropa",
-  "price": 49.99,
-  "stock": 90,
-  "id": "355ad2c1e38d565d1939a41f"
  },
  {
   "title": "Vestido Zara Summer",

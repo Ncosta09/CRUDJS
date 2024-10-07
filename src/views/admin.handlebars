@@ -1,0 +1,34 @@
+<div class="product-list-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Category</th>
+                <th>Eliminar</th>
+                <th>Modificar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.stock}}</td>
+                <td>{{this.category}}</td>
+                <td>
+                    <form action="/products/admin/{{this.id}}" method="POST" class="delete-form">
+                        <button type="submit" class="btn-eliminar">❌</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="/products/admin/edit/{{this.id}}" class="btn-editar">✍️</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

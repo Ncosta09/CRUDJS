@@ -209,7 +209,7 @@ input[type="photo"]:focus {
     border-color: #888;
 }
 
-button {
+.btn-login {
     width: 100%;
     padding: 0.75rem;
     background-color: #333;
@@ -221,7 +221,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.btn-login:hover {
     background-color: #555;
 }
 
@@ -237,4 +237,110 @@ button:hover {
 
 .forgot-password a:hover {
     text-decoration: underline;
+}
+
+/* ADMIN */
+.product-list-container {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.btn-editar, .btn-eliminar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* FORMULARIO DE MODIFICACIÓN */
+.center-div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Espaciado superior e inferior */
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem; /* Espacio inferior entre los campos */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #888; /* Color del borde al enfocar */
+}
+
+.form-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #555; /* Color de fondo al pasar el mouse */
+}
+
+.form-link {
+    display: inline-block;
+    margin-top: 1rem; /* Espaciado superior para el enlace */
+    text-align: center;
+    color: #666;
+    text-decoration: none;
+}
+
+.form-link:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
 }
