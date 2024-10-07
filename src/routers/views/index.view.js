@@ -6,7 +6,7 @@ const viewRouter = Router();
 
 viewRouter.get("/", (req, res, next)=> {
     try {
-        return res.render("index");
+        return res.redirect("/products"); //res.render("index") pero me confundi en la creacion del proyecto
     } catch (error) {
         return next(error);
     }

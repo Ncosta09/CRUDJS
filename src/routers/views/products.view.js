@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { 
     adminProducts,
+    createViewProduct,
     deleteViewProduct,
     showAllProducts,
     showEditProduct,
@@ -16,6 +17,10 @@ productsViewRouter.get("/admin", adminProducts);
 
 //ELIMIMNAR
 productsViewRouter.delete("/admin/:pid", deleteViewProduct);
+
+//CREAR
+productsViewRouter.get("/admin/create", (req, res) => { res.render("create"); });
+productsViewRouter.post("/admin/create", createViewProduct);
 
 //ACTUALIZAR
 productsViewRouter.get("/admin/edit/:pid", showEditProduct);

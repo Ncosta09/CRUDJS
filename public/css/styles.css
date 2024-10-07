@@ -244,6 +244,31 @@ input[type="photo"]:focus {
     margin: 20px;
 }
 
+.add-product-container {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.add-product-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px; 
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-product-button:hover {
+    background-color: #218838;
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -262,7 +287,7 @@ th {
     background-color: #f2f2f2;
 }
 
-.btn-editar, .btn-eliminar{
+.btn-editar, .btn-eliminar {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -284,7 +309,7 @@ th {
 .form-container {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto; /* Espaciado superior e inferior */
+    margin: 0 auto;
     padding: 2rem;
     background-color: #fff;
     border-radius: 8px;
@@ -309,12 +334,12 @@ th {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
-    margin-bottom: 1rem; /* Espacio inferior entre los campos */
+    margin-bottom: 1rem;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: #888; /* Color del borde al enfocar */
+    border-color: #888;
 }
 
 .form-button {
@@ -330,17 +355,18 @@ th {
 }
 
 .form-button:hover {
-    background-color: #555; /* Color de fondo al pasar el mouse */
+    background-color: #555;
 }
 
 .form-link {
     display: inline-block;
-    margin-top: 1rem; /* Espaciado superior para el enlace */
+    margin-top: 1rem;
     text-align: center;
     color: #666;
     text-decoration: none;
+    width: 100%;
 }
 
 .form-link:hover {
-    text-decoration: underline; /* Subrayar al pasar el mouse */
+    text-decoration: underline;
 }

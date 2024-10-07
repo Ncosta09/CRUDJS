@@ -246,6 +246,33 @@ async function updateViewProduct(req, res, next) {
     }
 }
 
+async function createViewProduct(req, res, next) {
+
+    try {
+        const {
+            title,
+            photo,
+            category,
+            price,
+            stock
+        } = req.body;
+        
+        const data = {
+            title,
+            photo,
+            category,
+            price,
+            stock
+        };
+    
+        await productsManager.create(data);
+    
+        return res.redirect('/products/admin');
+        
+    } catch (error) {
+        return next(error);
+    }
+}
 
 export{
     // api
@@ -261,5 +288,6 @@ export{
     adminProducts,
     deleteViewProduct,
     showEditProduct,
-    updateViewProduct
+    updateViewProduct,
+    createViewProduct
 }
