@@ -124,9 +124,12 @@ async function authenticateUser(req, res, next) {
 
     try {
         const user = await usersManager.authenticate(email, password);
+        console.log("ver user "+ user);
 
         if(user){
-            return res.redirect("/products");
+            await usersManager.update(user.id, { isOnline: true });
+            return res.redirect(`/users/profile/${user.id}`);
+            
         } else {
             return res.render("login", { error: "Invalid email or password" });
         }
@@ -148,7 +151,8 @@ async function creteViewUser(req, res, next) {
             email,
             password,
             photo,
-            role
+            role,
+            isOnline: false
         };
 
         console.log(data);
@@ -163,6 +167,38 @@ async function creteViewUser(req, res, next) {
     }
 }
 
+async function logOutView(req, res, next) {
+    try {
+        const { email } = req.body;
+
+        const user = await usersManager.findByEmail(email);
+        console.log("este es el user: " + user);
+        
+        if (user) {
+            await usersManager.update(user.id, { isOnline: false });
+        }
+        
+        res.redirect("/users/login");
+    } catch (error) {
+        return next(error);
+    }
+}
+
+async function profileView(req, res, next) {
+    try {
+        const userId = req.params.id;
+        const user = await usersManager.read(userId); 
+
+        if (user && user.isOnline) {
+            res.render("profile", { user });
+        } else {
+            res.redirect("/users/login");
+        }
+    } catch (error) {
+        return next(error);
+    }
+}
+
 export{
     getAllUsers,
     getUser,
@@ -172,5 +208,7 @@ export{
 
     // VIEWS
     authenticateUser,
-    creteViewUser
+    creteViewUser,
+    logOutView,
+    profileView
 }
