@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="profile-container">
+        <h2 class="profile-title">User Profile</h2>
+        <div class="profile-details">
+            
+            {{#if user.photo}}
+                <div class="profile-photo-container">
+                    <img class="profile-photo" src="{{user.photo}}" alt="Profile Photo">
+                </div>
+            {{else}}
+                <p class="profile-info">No photo available</p>
+            {{/if}}
+            
+            {{#if user.photo}}
+                <p class="profile-info">{{user.email}}</p>
+            {{else}}
+                <p class="profile-info">No mail available</p>
+            {{/if}}
+
+        </div>
+
+        <form action="/users/logout" method="POST">
+            <input type="hidden" name="email" value="{{user.email}}"> <!-- Aquí pasas el email -->
+            <button class="profile-button" type="submit">Logout</button>
+        </form>
+
+    </div>
+</div>

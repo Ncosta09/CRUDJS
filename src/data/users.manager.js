@@ -17,6 +17,7 @@ class UsersManager {
             console.log("File created!");
         }
     }
+
     async readAll(){
         try {
             const data = await fs.promises.readFile(this.path, "utf-8");
@@ -30,6 +31,7 @@ class UsersManager {
             throw error;
         }
     }
+
     async read(id){
         try {
             const all = await this.readAll();
@@ -43,9 +45,11 @@ class UsersManager {
             throw error;
         }
     }
+
     async create(userData){
         try {
             userData.id = crypto.randomBytes(12).toString("hex");
+            userData.isOnline = false;
 
             const allUsers = await this.readAll();
             allUsers.push(userData);
@@ -61,8 +65,13 @@ class UsersManager {
             throw error;
         }
     }
+
     async update(id, newUserData){
         try {
+
+            console.log("ID recibido para actualizar:", id);
+            console.log("Datos nuevos para actualizar:", newUserData);
+
             const all = await this.readAll();
             const index = all.findIndex((user) => user.id === id);
     
@@ -82,6 +91,7 @@ class UsersManager {
             throw error;
         }
     }
+
     async delete(id){
         try {
             const all = await this.readAll();
@@ -102,6 +112,36 @@ class UsersManager {
             throw error;
         }
     }
+
+    // USER AUTHENTICATION
+    async authenticate(email, password) {
+        try {
+            const allUsers = await this.readAll();
+            const user = allUsers.find(user => user.email === email);
+    
+            if (!user) {
+                return null;
+            }
+
+            console.log("se logueo:" +  user);
+
+            if (user.password === password) {
+                return user;
+            } else {
+                return null;
+            }
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async findByEmail(email){
+        const allUsers = await this.readAll();
+        const user = allUsers.find(one => one.email === email);
+        return user;
+    }
+    
 }
 
 const usersManager = new UsersManager("./src/data/fs/users.json");

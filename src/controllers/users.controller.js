@@ -118,10 +118,97 @@ async function deleteUser(req, res, next) {
     }
 }
 
+async function authenticateUser(req, res, next) {
+    const { email, password } = req.body;
+    console.log(req.body);
+
+    try {
+        const user = await usersManager.authenticate(email, password);
+        console.log("ver user "+ user);
+
+        if(user){
+            await usersManager.update(user.id, { isOnline: true });
+            return res.redirect(`/users/profile/${user.id}`);
+            
+        } else {
+            return res.render("login", { error: "Invalid email or password" });
+        }
+    } catch (error) {
+        return next(error);
+    }
+}
+
+async function creteViewUser(req, res, next) {
+    try {
+        const { 
+            email, 
+            password, 
+            photo, 
+            role = 0
+        } = req.body;
+        
+        const data = {
+            email,
+            password,
+            photo,
+            role,
+            isOnline: false
+        };
+
+        console.log(data);
+        
+    
+        await usersManager.create(data);
+    
+        return res.redirect("/users/login")
+        
+    } catch (error) {
+        return next(error);
+    }
+}
+
+async function logOutView(req, res, next) {
+    try {
+        const { email } = req.body;
+
+        const user = await usersManager.findByEmail(email);
+        console.log("este es el user: " + user);
+        
+        if (user) {
+            await usersManager.update(user.id, { isOnline: false });
+        }
+        
+        res.redirect("/users/login");
+    } catch (error) {
+        return next(error);
+    }
+}
+
+async function profileView(req, res, next) {
+    try {
+        const userId = req.params.id;
+        const user = await usersManager.read(userId); 
+
+        if (user && user.isOnline) {
+            res.render("profile", { user });
+        } else {
+            res.redirect("/users/login");
+        }
+    } catch (error) {
+        return next(error);
+    }
+}
+
 export{
     getAllUsers,
     getUser,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+
+    // VIEWS
+    authenticateUser,
+    creteViewUser,
+    logOutView,
+    profileView
 }

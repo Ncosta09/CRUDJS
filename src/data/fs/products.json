@@ -1,5 +1,12 @@
 [
  {
+  "title": "Laptop Dell",
+  "photo": "https://m.media-amazon.com/images/I/71nP6lTogjL._AC_SL1500_.jpg",
+  "category": "Electrónica",
+  "price": "599.99",
+  "stock": "32"
+ },
+ {
   "title": "Smartphone Samsung Galaxy S21",
   "photo": "default-photo-path.png",
   "category": "Electrónica",
@@ -318,5 +325,13 @@
   "price": 51.89,
   "stock": 99,
   "id": "a828519b5b7b10eaa444185b"
+ },
+ {
+  "title": "Peligro",
+  "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYwBnH8uLGqD0oURUoTAo_yvIP_It6ZYg5Tg&s",
+  "category": "Herramientas",
+  "price": "1230",
+  "stock": "120",
+  "id": "f75e0c49935ee594201cdc20"
  }
 ]
