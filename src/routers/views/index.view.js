@@ -1,18 +1,18 @@
-import { Router } from "express";
-import productsViewRouter from "./products.view.js";
-import usersViewRouter from "./users.view.js";
+// import { Router } from "express";
+// import productsViewRouter from "./products.view.js";
+// import usersViewRouter from "./users.view.js";
 
-const viewRouter = Router();
+// const viewRouter = Router();
 
-viewRouter.get("/", (req, res, next)=> {
-    try {
-        return res.render("index"); //res.render("index") pero me confundi en la creacion del proyecto
-    } catch (error) {
-        return next(error);
-    }
-});
+// viewRouter.get("/", (req, res, next)=> {
+//     try {
+//         return res.render("index"); //res.render("index") pero me confundi en la creacion del proyecto
+//     } catch (error) {
+//         return next(error);
+//     }
+// });
 
-viewRouter.use("/products", productsViewRouter);
-viewRouter.use("/users", usersViewRouter);
+// viewRouter.use("/products", productsViewRouter);
+// viewRouter.use("/users", usersViewRouter);
 
-export default viewRouter;
+// export default viewRouter;
