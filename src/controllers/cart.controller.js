@@ -52,11 +52,22 @@ const destroy = async (req, res, next) => {
     }
 }
 
+const calculateTotlal = async (req, res, next) => {
+    try {
+        const uid = req.params.uid;
+        const response = await cartsManager.calculateTotlal(uid);
+        return res.status(200).json({ response })
+    } catch (error) {
+        return next(error);
+    }
+}
+
 export {
     create,
     readAll,
     read,
     update,
-    destroy
+    destroy,
+    calculateTotlal
 }
 
