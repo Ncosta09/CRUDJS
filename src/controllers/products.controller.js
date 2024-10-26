@@ -70,13 +70,26 @@ const destroy = async (req, res, next) => {
     }
 }
 
+async function showAllProducts(req, res, next) {
+    try {
+        // const filter = req.query;
+        const { page, limit } = req.query
+        const response = await productsManager.paginate({}, { page, limit: limit || 8, lean: true });
+        return res.render("index", {data: response});
+
+    } catch (error) {
+        return next(error);
+    }
+}
+
 export {
     create,
     readAll,
     paginate,
     read,
     update,
-    destroy
+    destroy,
+    showAllProducts
 }
 
 // import productsManager from "../data/managers/products.manager.js";

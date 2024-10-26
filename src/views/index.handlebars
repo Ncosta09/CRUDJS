@@ -1,0 +1,22 @@
+<section class="products-grid">
+    {{#each data.docs}}
+    <a href="/products/{{this.id}}" class="product-card">
+        <article>
+            <h3 class="product-title">{{this.title}}</h3>
+            <p class="product-price">${{this.price}}</p>
+            <p class="product-category">{{this.category}}</p>
+            <p class="product-stock">Stock: {{this.stock}}</p>
+        </article>
+    </a>
+    {{/each}}
+</section>
+
+  {{#if data.hasPrevPage}}
+    <a href="?page={{data.prevPage}}&limit=8" class="btn btn-primary">Anterior</a>
+  {{/if}}
+
+  <p>Página {{data.page}}/{{data.totalPages}}</p>
+  
+  {{#if data.hasNextPage}}
+    <a href="?page={{data.nextPage}}&limit=8" class="btn btn-primary">Siguiente</a>
+  {{/if}}
