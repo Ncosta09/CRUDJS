@@ -22,7 +22,7 @@ const readAll = async (req, res, next) => {
 
 const read = async (req, res, next) => {
     try {
-        const { cid } = req.query;
+        const cid = req.params.cid;
         const response = await cartsManager.read(cid);
         return res.status(200).json({ response, message: "CART READ" })
     } catch (error) {
@@ -32,7 +32,7 @@ const read = async (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
-        const { cid } = req.query;
+        const cid = req.params.cid;
         const data = req.body;
         const response = await cartsManager.update(cid, data);
         return res.status(200).json({ response, message: "CART UPDATED" })
@@ -43,7 +43,7 @@ const update = async (req, res, next) => {
 
 const destroy = async (req, res, next) => {
     try {
-        const { cid } = req.query;
+        const cid = req.params.cid;
         const data = req.body;
         const response = await cartsManager.destroy(cid, data);
         return res.status(200).json({ response, message: "CART DELETED" })

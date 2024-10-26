@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { create, destroy, read, readAll, update } from "../../controllers/products.controller.js";
+import { create, destroy, read, paginate, readAll, update } from "../../controllers/products.controller.js";
 
 const productsRouter = Router();
 
 productsRouter.post("/", create);
 productsRouter.get("/", readAll);
+productsRouter.get("/paginate", paginate);
 productsRouter.get("/:pid", read);
 productsRouter.put("/:pid", update);
 productsRouter.delete("/:pid", destroy);

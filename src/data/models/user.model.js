@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import mongoosePaginator from "mongoose-paginate-v2";
 
 const collection = "users"
 const schema = new Schema({
@@ -9,5 +10,6 @@ const schema = new Schema({
     isOnline: { type: Boolean, default: false }
 });
 
+schema.plugin(mongoosePaginator);
 const User = model(collection, schema);
 export default User;

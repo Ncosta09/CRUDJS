@@ -14,7 +14,16 @@ class Manager {
 
     readAll = async (filter) => {
         try {
-            const response = await this.model.find(filter);
+            const response = await this.model.find(filter, '-__v');
+            return response;
+        } catch (error) {
+            throw error;   
+        }
+    }
+
+    paginate = async (filter) => {
+        try {
+            const response = await this.model.paginate(filter);
             return response;
         } catch (error) {
             throw error;   
@@ -23,7 +32,7 @@ class Manager {
 
     read = async (id) => {
         try {
-            const response = await this.model.findById(id);
+            const response = await this.model.findOne({_id: id});
             return response;
         } catch (error) {
             throw error;   
@@ -33,16 +42,16 @@ class Manager {
     update = async (id, data) => {
         try {
             const opts = {new: true}
-            const response = await this.model.findByIdAndUpdate(id, data, opts);
+            const response = await this.model.findOneAndUpdate({_id: id}, data, opts);
             return response;
         } catch (error) {
             throw error;   
         }
     }
 
-    delete = async (id) => {
+    destroy = async (id) => {
         try {
-            const response = await this.model.findByIdAndDelete(id);
+            const response = await this.model.findOneAndDelete({_id: id});
             return response;
         } catch (error) {
             throw error;   

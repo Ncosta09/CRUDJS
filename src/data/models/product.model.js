@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import mongoosePaginator from "mongoose-paginate-v2";
 
 const collection = "products"
 const schema = new Schema({
@@ -9,5 +10,6 @@ const schema = new Schema({
     stock: { type: Number, default: 1 }
 });
 
+schema.plugin(mongoosePaginator);
 const Product = model(collection, schema);
 export default Product;

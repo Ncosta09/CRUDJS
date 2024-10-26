@@ -20,6 +20,16 @@ const readAll = async (req, res, next) => {
     }
 }
 
+const paginate = async (req, res, next) => {
+    try {
+        const filter = req.query;
+        const response = await productsManager.paginate(filter);
+        return res.status(200).json({ response, message: "PRODUCTS READ" })
+    } catch (error) {
+        return next(error);
+    }
+}
+
 const read = async (req, res, next) => {
     try {
         const id = req.params.pid;
@@ -62,6 +72,7 @@ const destroy = async (req, res, next) => {
 export {
     create,
     readAll,
+    paginate,
     read,
     update,
     destroy
