@@ -34,7 +34,7 @@ class Manager {
 
     read = async (id) => {
         try {
-            const response = await this.model.findOne({_id: id});
+            const response = await this.model.findOne({_id: id}).lean();
             return response;
         } catch (error) {
             throw error;   

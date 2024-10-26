@@ -1,18 +1,12 @@
-// import { Router } from "express";
-// import { 
-//     adminProducts,
-//     createViewProduct,
-//     deleteViewProduct,
-//     showAllProducts,
-//     showEditProduct,
-//     showProduct,
-//     updateViewProduct
-// } from "../../controllers/products.controller.js";
+import { Router } from "express";
+import { showProduct } from "../../controllers/products.controller.js";
 
-// const productsViewRouter = Router();
+const productsViewRouter = Router();
 
-// //VER TODOS
-// productsViewRouter.get("/", showAllProducts);
+//VER SOLO UNO
+productsViewRouter.get("/:pid", showProduct);
+
+//VER TODOS
 // productsViewRouter.get("/admin", adminProducts); 
 
 // //ELIMIMNAR
@@ -26,7 +20,5 @@
 // productsViewRouter.get("/admin/edit/:pid", showEditProduct);
 // productsViewRouter.post("/admin/:pid", updateViewProduct);
 
-// //VER SOLO UNO
-// productsViewRouter.get("/:pid", showProduct);
 
-// export default productsViewRouter;
+export default productsViewRouter;
