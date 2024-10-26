@@ -23,9 +23,9 @@ class Manager {
         }
     }
 
-    paginate = async (filter) => {
+    paginate = async (filter, paginate) => {
         try {
-            const response = await this.model.paginate(filter);
+            const response = await this.model.paginate(filter, paginate);
             return response;
         } catch (error) {
             throw error;   

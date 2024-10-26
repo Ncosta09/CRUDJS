@@ -22,8 +22,9 @@ const readAll = async (req, res, next) => {
 
 const paginate = async (req, res, next) => {
     try {
-        const filter = req.query;
-        const response = await productsManager.paginate(filter);
+        // const filter = req.query;
+        const { page, limit } = req.query
+        const response = await productsManager.paginate({}, { page, limit });
         return res.status(200).json({ response, message: "PRODUCTS READ" })
     } catch (error) {
         return next(error);
