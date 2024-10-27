@@ -59,12 +59,42 @@ const destroy = async (req, res, next) => {
     }
 }
 
+async function registerUser(req, res, next) {
+    try {
+        const { 
+            email, 
+            password, 
+            photo, 
+            role,
+            isOnline
+        } = req.body;
+        
+        const data = {
+            email,
+            password,
+            photo,
+            role,
+            isOnline
+        };
+
+        console.log(data);
+    
+        await usersManager.create(data);
+    
+        return res.redirect("/users/login")
+        
+    } catch (error) {
+        return next(error);
+    }
+}
+
 export {
     create,
     readAll,
     read,
     update,
-    destroy
+    destroy,
+    registerUser
 }
 
 
