@@ -1,22 +1,23 @@
-<section class="products-grid">
-    {{#each data.docs}}
-    <a href="/products/{{this._id}}" class="product-card">
-        <article>
-            <h3 class="product-title">{{this.title}}</h3>
-            <p class="product-price">${{this.price}}</p>
-            <p class="product-category">{{this.category}}</p>
-            <p class="product-stock">Stock: {{this.stock}}</p>
-        </article>
-    </a>
-    {{/each}}
-</section>
+<div class="main-cards-pagination">
+    <section class="products-grid">
+        {{#each data.docs}}
+        <a href="/products/{{this._id}}" class="product-card">
+            <article>
+                <h3 class="product-title">{{this.title}}</h3>
+                <p class="product-price">${{this.price}}</p>
+                <p class="product-category">{{this.category}}</p>
+                <p class="product-stock">Stock: {{this.stock}}</p>
+            </article>
+        </a>
+        {{/each}}
 
-  {{#if data.hasPrevPage}}
-    <a href="?page={{data.prevPage}}&limit=8" class="btn btn-primary">Anterior</a>
-  {{/if}}
+    </section>
 
-  <p>Página {{data.page}}/{{data.totalPages}}</p>
-  
-  {{#if data.hasNextPage}}
-    <a href="?page={{data.nextPage}}&limit=8" class="btn btn-primary">Siguiente</a>
-  {{/if}}
+    <div class="pagination">
+        <a href="?page={{data.prevPage}}&limit=8" class="pagination-btn {{#unless data.hasPrevPage}}disabled{{/unless}}">Anterior</a>
+
+        <span class="pagination-info">Página {{data.page}} de {{data.totalPages}}</span>
+
+        <a href="?page={{data.nextPage}}&limit=8" class="pagination-btn {{#unless data.hasNextPage}}disabled{{/unless}}">Siguiente</a>
+    </div>
+</div>
