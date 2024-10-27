@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { authenticateUser, registerUser } from "../../controllers/users.controller.js";
+import { authenticateUser, profileView, registerUser } from "../../controllers/users.controller.js";
 
 const usersViewRouter = Router();
 
@@ -9,7 +9,8 @@ usersViewRouter.post("/login", authenticateUser);
 usersViewRouter.get("/register", (req, res) => { res.render("register"); });
 usersViewRouter.post("/register", registerUser);
 
-// usersViewRouter.get("/profile/:id", );
+usersViewRouter.get("/profile/:id", profileView);
+
 // usersViewRouter.post("/logout", );
 
 export default usersViewRouter;

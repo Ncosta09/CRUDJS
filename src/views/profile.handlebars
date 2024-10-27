@@ -11,7 +11,7 @@
                 <p class="profile-info">No photo available</p>
             {{/if}}
             
-            {{#if user.photo}}
+            {{#if user.email}}
                 <p class="profile-info">{{user.email}}</p>
             {{else}}
                 <p class="profile-info">No mail available</p>
@@ -19,8 +19,7 @@
 
         </div>
 
-        <form action="/users/logout" method="POST">
-            <input type="hidden" name="email" value="{{user.email}}"> <!-- Aquí pasas el email -->
+        <form>
             <button class="profile-button" type="submit">Logout</button>
         </form>
 
