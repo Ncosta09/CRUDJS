@@ -88,13 +88,42 @@ async function registerUser(req, res, next) {
     }
 }
 
+// Authentication function directly within the controller
+async function authenticateUser(req, res, next) {
+    const { email, password } = req.body;
+    console.log(req.body);
+
+    try {
+        // Obtener todos los usuarios directamente
+        const allUsers = await usersManager.readAll();
+        const user = allUsers.find(user => user.email === email);
+
+        if (user && user.password === password) {
+            // Actualizar el estado del usuario a 'online'
+            await usersManager.update(user.id, { isOnline: true });
+            console.log("Usuario logueado: ", user);
+
+            // return res.redirect(`/users/profile/${user.id}`);
+            return res.redirect("/")
+
+        } else {
+            // Si las credenciales no son válidas, renderizar la vista de login con error
+            return res.render("login", { error: "Invalid email or password" });
+        }
+    } catch (error) {
+        console.error(error);
+        return next(error);
+    }
+}
+
 export {
     create,
     readAll,
     read,
     update,
     destroy,
-    registerUser
+    registerUser,
+    authenticateUser
 }
 
 
@@ -234,35 +263,6 @@ export {
 //         } else {
 //             return res.render("login", { error: "Invalid email or password" });
 //         }
-//     } catch (error) {
-//         return next(error);
-//     }
-// }
-
-// async function creteViewUser(req, res, next) {
-//     try {
-//         const { 
-//             email, 
-//             password, 
-//             photo, 
-//             role = 0
-//         } = req.body;
-        
-//         const data = {
-//             email,
-//             password,
-//             photo,
-//             role,
-//             isOnline: false
-//         };
-
-//         console.log(data);
-        
-    
-//         await usersManager.create(data);
-    
-//         return res.redirect("/users/login")
-        
 //     } catch (error) {
 //         return next(error);
 //     }
